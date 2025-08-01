@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: go-pwtskgxl
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: go-pwtskgxl 
+  name: go-pwtskgxl
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: go-pwtskgxl
+    weight: 100 
